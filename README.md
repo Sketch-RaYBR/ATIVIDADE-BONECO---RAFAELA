@@ -102,8 +102,7 @@ package javaapplication1;
 import java.util.Scanner;
     
     public class JavaApplication1 {
-    
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
         int tentativa = 0;
@@ -124,23 +123,17 @@ import java.util.Scanner;
 
             resposta = scanner.next().toLowerCase().charAt(0);
 
-            switch (resposta) {
-                case 'b':
-                    System.out.println("Resposta correta!");
-                    System.out.println("Você acertou na tentativa " + tentativa);
-                    acertou = true;
-                    break;
+            if (resposta == 'b') {
+                System.out.println("Resposta correta!");
+                System.out.println("Você acertou na tentativa " + tentativa);
+                acertou = true;
 
-                case 'a':
-                case 'c':
-                case 'd':
-                case 'e':
-                    System.out.println("Resposta incorreta.");
-                    break;
+            } else if (resposta == 'a' || resposta == 'c' || resposta == 'd' || resposta == 'e') {
+                System.out.println("Resposta incorreta.");
 
-                default:
-                    System.out.println("Opção inválida.");
-                    tentativa--; // não conta tentativa inválida
+            } else {
+                System.out.println("Opção inválida.");
+                tentativa--; // não conta tentativa inválida
             }
 
         } while (!acertou && tentativa < 3);
