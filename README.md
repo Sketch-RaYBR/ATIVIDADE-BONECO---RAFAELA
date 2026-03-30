@@ -148,7 +148,5 @@ import java.util.Scanner;
         if (!acertou && tentativa == 3) {
             System.out.println("\nResposta incorreta nas 3 tentativas.");
         }
-
-        scanner.close();
     }
 }
